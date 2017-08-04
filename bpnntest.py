@@ -79,7 +79,7 @@ def getData(y):
         arrResult = np.array(arrLoad, dtype=np.double)
         return arrResult
 
-arr = getData(True)
+arr = getData(False)
 arrPredict = getData(False)
 pl = arrPredict.shape[0]
 
@@ -116,8 +116,9 @@ for step in range(0,200000001):
     (batch1, batch2) = nextBatch(arr,batchCount)
     train_step.run(feed_dict={x: batch1, y_: batch2})
 
-    if step % 20 == 0:
+    if step % 2000 == 0:
         save_path = saver.save(sess, '%smodel.ckpt' % path)
+
         delta = sess.run(cross_entropy, feed_dict={x: batch1,
                                            y_: batch2});
         print(step, delta, precision)  # , sess.run(y1,feed_dict={x: batch1, y_: batch2}), batch2
