@@ -68,7 +68,7 @@ def predictArray(arr,count):
 
 def getData(y):
     if y:
-        urlGetData = 'https://ichess.sinaapp.com/other/bpnn.php?y=1'
+        urlGetData = 'https://ichess.sinaapp.com/other/bpnn.php?y=0'
     else:
         urlGetData = 'https://ichess.sinaapp.com/other/bpnn.php'
     for line in urlopen(urlGetData):
@@ -112,11 +112,13 @@ sess.run(init)
 if os.path.exists('%scheckpoint' % path): #判断模型是否存在
     saver.restore(sess, '%smodel.ckpt' % path) #存在就从模型中恢复变量
 
-for step in range(0,200000001):
+for step in range(1,200000001):
     (batch1, batch2) = nextBatch(arr,batchCount)
     train_step.run(feed_dict={x: batch1, y_: batch2})
 
-    if step % 2000 == 0:
+    if step % 10000 == 0:
+        arr = getData(False)
+
         save_path = saver.save(sess, '%smodel.ckpt' % path)
 
         delta = sess.run(cross_entropy, feed_dict={x: batch1,

@@ -77,7 +77,7 @@ def predictArray(arr,count):
 
 def getData(y):
     if y:
-        urlGetData = 'https://ichess.sinaapp.com/other/bpnn.php?y=1'
+        urlGetData = 'https://ichess.sinaapp.com/other/bpnn.php?y=0'
     else:
         urlGetData = 'https://ichess.sinaapp.com/other/bpnn.php'
     for line in urlopen(urlGetData):
