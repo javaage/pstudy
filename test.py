@@ -1,2 +1,45 @@
-import tensorflow.examples.tutorials.mnist.input_data as input_data
-mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
+import tensorflow as tf
+import numpy as np
+
+print(np.dot([[1,2],[3,3]],[[3],[5]]))
+
+print(tf.matmul([[1,2],[3,3]],[[3],[5]]))
+
+#test = [1,2,3]
+#print(test)
+
+#print(test.shape)
+exit(1)
+
+
+
+# 使用 NumPy 生成假数据(phony data), 总共 100 个点.
+x_data = np.float32(np.random.rand(2, 100)) # 随机输入
+
+print(x_data)
+y_data = np.dot([0.100, 0.200], x_data) + 0.300
+
+# 构造一个线性模型
+#
+b = tf.Variable(tf.zeros([1]))
+W = tf.Variable(tf.random_uniform([1, 2], -1.0, 1.0))
+y = tf.matmul(W, x_data) + b
+
+# 最小化方差
+loss = tf.reduce_mean(tf.square(y - y_data))
+optimizer = tf.train.GradientDescentOptimizer(0.5)
+train = optimizer.minimize(loss)
+
+# 初始化变量
+init = tf.initialize_all_variables()
+
+# 启动图 (graph)
+sess = tf.Session()
+sess.run(init)
+
+# 拟合平面
+for step in range(0, 201):
+    sess.run(train)
+    if step % 20 == 0:
+        print(step, sess.run(W), sess.run(b))
+
