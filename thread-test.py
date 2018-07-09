@@ -15,7 +15,7 @@ def print_time( threadName, delay):
 # 创建两个线程
 try:
     threading._start_new_thread( print_time, ("Thread-1", 2, ))
-    threading._start_new_thread( print_time, ("Thread-2", 4, ))
+    threading._start_new_thread( print_time, ("Thread-3", 4, ))
 except:
     print("Error: unable to start thread")
 
