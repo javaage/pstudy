@@ -20,16 +20,16 @@ def user(name):
 
   basics = ts.get_stock_basics()
 
-  condition = basics['pe'] < 41 and basics['pe'] > 0 and basics['pb'] < 5 and basics['pb'] > 0 and basics['rev'] > 0 and basics['profit'] > 0
+  # condition = basics['pe'] < 41 and basics['pe'] > 0 and basics['pb'] < 5 and basics['pb'] > 0 and basics['rev'] > 0 and basics['profit'] > 0
+  #
+  # basics = basics[condition]
 
-  basics = basics[condition]
-
-  # basics = basics[basics['pe'] < 41]
-  # basics = basics[basics['pe'] > 0]
-  # basics = basics[basics['pb'] < 5]
-  # basics = basics[basics['pb'] > 0]
-  # basics = basics[basics['rev'] > 0]
-  # basics = basics[basics['profit'] > 0]
+  basics = basics[basics['pe'] < 41]
+  basics = basics[basics['pe'] > 0]
+  basics = basics[basics['pb'] < 5]
+  basics = basics[basics['pb'] > 0]
+  basics = basics[basics['rev'] > 0]
+  basics = basics[basics['profit'] > 0]
   # basics = basics[basics['industry'] != '区域地产']
   # basics = basics[basics['industry'] != '全国地产']
   # basics = basics[basics['industry'] != '银行']
