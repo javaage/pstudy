@@ -24,7 +24,7 @@ for code in codedata.pe41:
     low = lowfilter[lowfilter[lowfilter == False][-1:].index[0] + 1:-1].shape[0]
     lowtotal += low
     lowcodes.append([low, code])
-    # print(json.dumps(codes))
+    print(code)
 
 highcodes.sort(reverse=True)
 subject = "High:%f, Low:%f, Date: %s" % (round(hightotal / count, 2), round(lowtotal / count, 2), time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
