@@ -1,6 +1,7 @@
 # coding=utf-8
 import smtplib
 from email.mime.text import MIMEText
+import time
 
 def sendMail(subject,content):
   msg_from = 'hb_java@sina.com'  # 发送方邮箱
@@ -20,5 +21,8 @@ def sendMail(subject,content):
     print("发送失败", e)
   finally:
     s.quit()
+
+if __name__=="__main__":
+  sendMail("crontab",time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 
 
