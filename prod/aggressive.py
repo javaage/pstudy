@@ -25,19 +25,27 @@ for code in pe41:
   df = ts.get_k_data(code, start='1990-12-01')
   if df.shape[0]>30:
     count += 1
-    highfilter= df['close'] <= df.loc[df.shape[0] - 1, 'close']
-    high = highfilter[highfilter[highfilter == False][-1:].index[0] + 1:-1].shape[0]
-    hightotal += high
+    highfilter = df['close'] <= df.loc[df.shape[0] - 1, 'close']
+    if (highfilter[highfilter == False].shape[0] > 0):
+      high = highfilter[highfilter[highfilter == False][-1:].index[0] + 1:-1].shape[0]
+      hightotal += high
+    else:
+      high = highfilter.shape[0]
+      hightotal += high
     highcodes.append([high, code])
 
     lowfilter = df['close'] >= df.loc[df.shape[0] - 1, 'close']
-    low = lowfilter[lowfilter[lowfilter == False][-1:].index[0] + 1:-1].shape[0]
-    lowtotal += low
+    if (lowfilter[lowfilter == False].shape[0] > 0):
+      low = lowfilter[lowfilter[lowfilter == False][-1:].index[0] + 1:-1].shape[0]
+      lowtotal += low
+    else:
+      low = lowfilter.shape[0]
+      lowtotal += low
     lowcodes.append([low, code])
     logging.warning(highcodes)
     logging.warning(lowcodes)
 
 highcodes.sort(reverse=True)
 subject = "High:%f, Low:%f, Date: %s" % (round(hightotal / count, 2), round(lowtotal / count, 2), time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
-content = "High:%s, Low:%s" % (json.dumps(highcodes),json.dumps(lowcodes))
+content = "High:%s, \r\n Low:%s" % (json.dumps(highcodes),json.dumps(lowcodes))
 smail.sendMail(subject,content)

@@ -23,6 +23,6 @@ def sendMail(subject,content):
     s.quit()
 
 if __name__=="__main__":
-  sendMail("crontab",time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+  sendMail("crontab", "br \r\n " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 
 
