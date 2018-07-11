@@ -15,7 +15,7 @@ lowtotal = 0
 # pe41 = ['600004','600000']
 
 basics = pandas.read_json('df.json',orient='table')
-basics = basics[basics['pe'] < 21][basics['pe'] > 20.8][basics['pb'] < 5][basics['pb'] > 0][basics['rev'] > 0][basics['profit'] > 0][basics['industry'] != '区域地产'][basics['industry'] != '全国地产'][basics['industry'] != '银行']
+basics = basics[basics['pe'] < 41][basics['pe'] > 0][basics['pb'] < 5][basics['pb'] > 0][basics['rev'] > 0][basics['profit'] > 0][basics['industry'] != '区域地产'][basics['industry'] != '全国地产'][basics['industry'] != '银行']
 pe41 = basics.index
 print(basics.index)
 
