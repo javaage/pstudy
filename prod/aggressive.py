@@ -4,6 +4,7 @@ import smail
 import codedata
 import json
 import time
+import pandas
 
 highcodes = [];
 lowcodes = [];
@@ -11,7 +12,15 @@ count = 0
 hightotal = 0
 lowtotal = 0
 # pe41 = ['600004','600000']
-for code in codedata.pe41:
+
+basics = pandas.read_json('df.json',orient='table')
+basics = basics[basics['pe'] < 41][basics['pe'] > 0][basics['pb'] < 5][basics['pb'] > 0][basics['rev'] > 0][basics['profit'] > 0][basics['industry'] != '区域地产'][basics['industry'] != '全国地产'][basics['industry'] != '银行']
+pe41 = basics.index
+# print(basics.index)
+
+for code in pe41:
+  code = str(code)
+  print(code)
   df = ts.get_k_data(code, start='1990-12-01')
   if df.shape[0]>30:
     count += 1
