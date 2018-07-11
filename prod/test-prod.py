@@ -13,6 +13,10 @@ count = 0
 hightotal = 0
 lowtotal = 0
 code='600009'
+
+logging.basicConfig(filename='log.txt',level=logging.DEBUG)
+logging.debug('this is a message')
+
 df = ts.get_k_data(code, start='1990-12-01')
 if df.shape[0]>30:
     count += 1
