@@ -24,11 +24,22 @@ pe41 = basics.index
 print(basics.index)
 
 now = datetime.datetime.now().strftime('%Y-%m-%d')
-conn = pymysql.connect('localhost', 'root', 'a123456', 'tushare')
+# conn = pymysql.connect('localhost', 'root', 'a123456', 'tushare')
+conn = pymysql.connect('pactera.cifdw7epxuja.ap-northeast-2.rds.amazonaws.com', 'pactera', '19786028', 'test')
+
+cursor = conn.cursor()
+sql = "SELECT AGGR_CODE FROM TSHR_AGGR WHERE AGGR_DATE='%s'" % now
+cursor.execute(sql);
+results = cursor.fetchall()
+logging.debug(results[0])
 
 for code in pe41:
   code = "%06d" % code
   logging.debug(code)
+
+  if(code in results[0]):
+    break;
+
   df = ts.get_k_data(code, start='1990-12-01')
   if df.shape[0]>30:
     count += 1
