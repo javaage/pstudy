@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e419628f-9f58-44d9-981e-356d8d667925" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/prod/test-prod.py" afterPath="$PROJECT_DIR$/prod/test-prod.py" />
+      <change beforePath="$PROJECT_DIR$/prod/aggressive.py" afterPath="$PROJECT_DIR$/prod/aggressive.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -53,13 +52,13 @@
       <file leaf-file-name="aggressive.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/prod/aggressive.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+            <state relative-caret-position="183">
+              <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1531450538618" expanded="true" signature="885:933" ph="SELECT AGGR_... TSHR_AGGR" />
-                <marker date="1531450538618" expanded="true" signature="885:937" ph="SELECT AGGR_... TSHR_AGGR" />
-                <marker date="1531450538618" expanded="true" signature="1896:1998" ph="INSERT INTO `tushare`.`tshr_aggr`... " />
+                <marker date="1531461533088" expanded="true" signature="885:933" ph="SELECT AGGR_... TSHR_AGGR" />
+                <marker date="1531461533088" expanded="true" signature="885:937" ph="SELECT AGGR_... TSHR_AGGR" />
+                <marker date="1531461533088" expanded="true" signature="1896:1987" ph="INSERT INTO `tushare`.`tshr_aggr`... " />
               </folding>
             </state>
           </provider>
@@ -979,13 +978,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prod/aggressive.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="9" column="15" lean-forward="true" selection-start-line="9" selection-start-column="15" selection-end-line="9" selection-end-column="15" />
+        <state relative-caret-position="183">
+          <caret line="30" column="38" lean-forward="false" selection-start-line="30" selection-start-column="38" selection-end-line="30" selection-end-column="38" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1531450538618" expanded="true" signature="885:933" ph="SELECT AGGR_... TSHR_AGGR" />
-            <marker date="1531450538618" expanded="true" signature="885:937" ph="SELECT AGGR_... TSHR_AGGR" />
-            <marker date="1531450538618" expanded="true" signature="1896:1998" ph="INSERT INTO `tushare`.`tshr_aggr`... " />
+            <marker date="1531461533088" expanded="true" signature="885:933" ph="SELECT AGGR_... TSHR_AGGR" />
+            <marker date="1531461533088" expanded="true" signature="885:937" ph="SELECT AGGR_... TSHR_AGGR" />
+            <marker date="1531461533088" expanded="true" signature="1896:1987" ph="INSERT INTO `tushare`.`tshr_aggr`... " />
           </folding>
         </state>
       </provider>

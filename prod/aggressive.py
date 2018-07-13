@@ -61,7 +61,7 @@ for code in pe41:
       lowtotal += low
     lowcodes.append([low, code])
     cursor = conn.cursor()
-    sql = 'INSERT INTO `tushare`.`tshr_aggr`(`AGGR_DATE`,`AGGR_CODE`,`AGGR_HIGH`,`AGGR_LOW`) VALUES (%s,%s,%s,%s);'
+    sql = 'INSERT INTO TSHR_AGGR (`AGGR_DATE`,`AGGR_CODE`,`AGGR_HIGH`,`AGGR_LOW`) VALUES (%s,%s,%s,%s);'
     cursor.execute(sql, (now, code, high, low));
     conn.commit()
     # logging.debug(highcodes)
