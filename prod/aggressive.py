@@ -30,13 +30,12 @@ cursor = conn.cursor()
 sql = "SELECT AGGR_CODE FROM TSHR_AGGR WHERE AGGR_DATE='%s'" % now
 cursor.execute(sql);
 results = cursor.fetchall()
-logging.debug(results)
 
 for code in pe41:
   code = "%06d" % code
   logging.debug(code)
 
-  if(code in results[0]):
+  if(code in results):
     break;
 
   df = ts.get_k_data(code, start='1990-12-01')
